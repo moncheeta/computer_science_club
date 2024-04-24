@@ -1,0 +1,8 @@
+{% macro head(group, subsection) -%}
+	<title>{{ group.name }}
+	{% if subsection %}
+		- {{ subsection }}
+	{% endif %}
+	</title>
+	<link rel="icon" type="image/x-icon" href="{{ group.picture }}">
+{%- endmacro %}

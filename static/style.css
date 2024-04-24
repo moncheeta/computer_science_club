@@ -1,0 +1,19 @@
+* {
+	color: white;
+	font-family: monospace;
+}
+
+body {
+	background-color: black;
+}
+
+input, textarea {
+	color: black;
+}
+
+center {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	position: absolute;
+}

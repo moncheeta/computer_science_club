@@ -1,0 +1,17 @@
+{% import "elements/datetime.html" as datetime %}
+
+{% macro view(update) -%}
+	<p>{{ update.member.name }} on {{ datetime.date(update.time) }} at {{ datetime.time(update.time) }}: {{ update.text }}</p>
+{%- endmacro %}
+
+{% macro recent(update) -%}
+	<p>Annocement from {{ update.member.name }} on {{ datetime.date(update.time) }} at {{ datetime.time(update.time) }}: {{ update.text }}</p>
+{%- endmacro %}
+
+{% macro list(updates) -%}
+{% for update in updates %}
+<div>
+	{{ view(update) }}
+</div>
+{% endfor %}
+{%- endmacro %}

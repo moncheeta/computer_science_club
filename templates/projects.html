@@ -1,0 +1,25 @@
+<html>
+<head>
+	{% import "elements/metadata.html" as metadata %}
+	{% if create %}
+	{{ metadata.head(group, "New Project") }}
+	{% else %}
+	{{ metadata.head(group, "Projects") }}
+	{% endif %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<header>
+	{% import "elements/navigation.html" as navigation %}
+	{{ navigation.bar() }}
+</header>
+
+<body>
+	{% import "elements/space.html" as space %}
+	{{ space.stars(500) }}
+
+	{% import "elements/projects.html" as projects %}
+	<h1>Projects</h1>
+	{{ projects.list(group.projects) }}
+</body>
+</html>

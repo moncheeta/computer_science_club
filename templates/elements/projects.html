@@ -1,0 +1,49 @@
+{% import "elements/authors.html" as authors %}
+
+{% macro view(project) -%}
+	<h2>{{ project.name }}</h2>
+	<p>{{ project.description }}</p>
+	{% if project.source %}
+	<a target="_blank" href="{{ project.source }}">Source Code</a>
+	<br>
+	{% endif %}
+	{{ authors.list(project.authors) }}
+	{% if project.images %}
+	{% for image in project.images %}
+	<img src="{{ image }}">
+	{% endfor %}
+	{% endif %}
+{%- endmacro %}
+
+{% macro list(projects) -%}
+{% for project in projects %}
+<div>
+	{{ view(project) }}
+	<br>
+</div>
+{% endfor %}
+{%- endmacro %}
+
+{% macro new() -%}
+<center>
+	<h1>Add New Project</h1>
+	<form method="post" enctype="multipart/form-data">
+		<label for="name">Name:</label>
+		<input name="name" id="name" required>
+		<br>
+		<label for="description">Description:</label>
+		<textarea name="description" id="description" required></textarea>
+		<br>
+		<label for="authors">Authors:</label>
+		<input name="authors" id="authors" required>
+		<br>
+		<label for="source">Source:</label>
+		<input name="source" id="source">
+		<br>
+		<label for="images">Images:</label>
+		<input name="images" id="images" type="file" accept="image/*" multiple>
+		<br>
+		<input type="submit" value="Add">
+	</form>
+</center>
+{%- endmacro %}

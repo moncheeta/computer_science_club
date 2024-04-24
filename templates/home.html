@@ -1,0 +1,27 @@
+<html>
+<head>
+	{% import "elements/metadata.html" as metadata %}
+	{{ metadata.head(group)}}
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<header>
+	{% import "elements/navigation.html" as navigation %}
+	{{ navigation.bar() }}
+</header>
+
+<body>
+	{% import "elements/space.html" as space %}
+	{{ space.stars(500) }}
+	<center>
+		<h1>{{ group.name }}</h1>
+		<p>{{ group.description }}</p>
+
+		{% import "elements/events.html" as events %}
+		{{ events.next(group.events[0]) }}
+
+		{% import "elements/updates.html" as updates %}
+		{{ updates.recent(group.updates[0]) }}
+	</center>
+</body>
+</html>
