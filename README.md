@@ -1,6 +1,5 @@
-# computer_science_club
-
-A website for Computer Science Club. It was made during a mini-hackathon.
+# Computer Science Club Website
+A website for Computer Science Club made during a mini-hackathon.
 
 ## setup
 
