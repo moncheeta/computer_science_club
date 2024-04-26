@@ -1,6 +1,8 @@
 # Computer Science Club Website
 A website for Computer Science Club made during a mini-hackathon.
 
+![home page](./assets/home.png)
+
 ## setup
 ### environment
 To setup the server environment, run `python -m venv .` in the root of the project. Then, execute `. ./bin/activate` and you should be in the virtual environment. Next, run `pip install flask schoolopy jsonpickle cachecontrol google-auth google_auth_oauthlib` to install all the dependencies. Now, exit using by running `exit`.
