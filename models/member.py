@@ -1,7 +1,7 @@
 class Member:
-	name = ""
-	leader = False
+    name = ""
+    leader = False
 
-	def __init__(self, name = "", leader = False):
-		self.name = name
-		self.leader = leader
+    def __init__(self, name="", leader=False):
+        self.name = name
+        self.leader = leader

@@ -3,3 +3,4 @@ lib64
 bin/
 __pycache__/
 pyvenv.cfg
+google_auth.json

@@ -1,39 +1,41 @@
 <html>
-<head>
-	{% import "elements/metadata.html" as metadata %}
-	{{ metadata.head(group, "Members") }}
-	<link rel="stylesheet" href="{{ url_for('static', filename='intro.css') }}">
-</head>
+  <head>
+    {% import "elements/metadata.html" as metadata %} {{ metadata.head(group,
+    "Members") }}
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='intro.css') }}"
+    />
+  </head>
 
-<body>
-	{% import "elements/space.html" as space %}
-	{{ space.stars(200) }}
-	<div id="board">  
-		<div id="content">
-			<center>
-				<h1>COMPUTER</h1>
-				<h1>SCIENCE</h1>
-				<h1>CLUB</h1>
-				<h2>LEADERS</h2>
-				{% for leader in group.leaders %}
-				<p>{{ leader.name }}</p>
-				{% endfor %}
-				<br>
-				<h2>MEMBERS</h2>
-				{% for member in group.members %}
-				<p>{{ member.name }}</p>
-				{% endfor %}
-				<br>
-				<h2>CREATED BY</h2>
-				<p>Damian Myrda</p>
-			</center>
-		</div>  
-	</div>
-	<a id="back" class="hidden" href="/">Back</a>
-	<script>
-		setTimeout(function() {
-			document.getElementById("back").className = "shown";
-		}, 8000);
-	</script>
-</body>
+  <body>
+    {% import "elements/space.html" as space %} {{ space.stars(200) }}
+    <div id="board">
+      <div id="content">
+        <center>
+          <h1>COMPUTER</h1>
+          <h1>SCIENCE</h1>
+          <h1>CLUB</h1>
+          <h2>LEADERS</h2>
+          {% for leader in group.leaders %}
+          <p>{{ leader.name }}</p>
+          {% endfor %}
+          <br />
+          <h2>MEMBERS</h2>
+          {% for member in group.members %}
+          <p>{{ member.name }}</p>
+          {% endfor %}
+          <br />
+          <h2>CREATED BY</h2>
+          <p>Damian Myrda</p>
+        </center>
+      </div>
+    </div>
+    <a id="back" class="hidden" href="/">Back</a>
+    <script>
+      setTimeout(function () {
+        document.getElementById("back").className = "shown";
+      }, 8000);
+    </script>
+  </body>
 </html>

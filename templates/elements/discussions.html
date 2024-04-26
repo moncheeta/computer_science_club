@@ -1,14 +1,8 @@
 {% macro view(discussion) -%}
-	<a target="_blank" href="{{ discussion.link }}">
-		{{ discussion.name }}
-		{{ discussion.description }}
-	</a>
-{%- endmacro %}
-
-{% macro list(discussions) -%}
-{% for discussion in discussions %}
-<div>
-	{{ view(discussion) }}
-</div>
-{% endfor %}
-{%- endmacro %}
+<a target="_blank" href="{{ discussion.link }}">
+  {{ discussion.name }} {{ discussion.description }}
+</a>
+{%- endmacro %} {% macro list(discussions) -%} {% for discussion in discussions
+%}
+<div>{{ view(discussion) }}</div>
+{% endfor %} {%- endmacro %}

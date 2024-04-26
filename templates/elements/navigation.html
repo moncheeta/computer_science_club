@@ -1,9 +1,17 @@
-{% macro bar() -%}
+{% macro bar(account) -%}
 <nav>
-	<a href="/">Home</a>
-	<a href="/updates">Updates</a>
-	<a href="/discussions">Discussions</a>
-	<a href="/projects">Projects</a>
-	<a href="/members">Members</a>
+  <a href="/">Home</a>
+  <a href="/updates">Updates</a>
+  <a href="/discussions">Discussions</a>
+  <a href="/projects">Projects</a>
+  <a href="/members">Members</a>
+  <div style="float: right">
+    {% if account %}
+    <a>{{ account }}</a>
+    <a href="/logout">Logout</a>
+    {% else %}
+    <a href="/login">Login</a>
+    {% endif %}
+  </div>
 </nav>
 {%- endmacro %}

@@ -1,26 +1,26 @@
 {% macro stars(num) -%}
 <style>
-	#star {
-		position: absolute;
-		width: 1px;
-		height: 1px;
-		background-color: white;
-	}
+  #star {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background-color: white;
+  }
 </style>
 <script>
-	for (let i = 0; i < {{ num }}; i++) {
-		let star = document.createElement("div");  
-		star.id = "star";
-		var [w, h] = randomPosition();
-		star.style.top = h + "px";
-		star.style.left = w + "px";
-		document.body.append(star);
-	}
+  for (let i = 0; i < {{ num }}; i++) {
+  	let star = document.createElement("div");
+  	star.id = "star";
+  	var [w, h] = randomPosition();
+  	star.style.top = h + "px";
+  	star.style.left = w + "px";
+  	document.body.append(star);
+  }
 
-	function randomPosition() {  
-		var rw = Math.floor(Math.random() * window.innerWidth);
-		var rh = Math.floor(Math.random() * window.innerHeight);
-		return [rw, rh];
-	}
+  function randomPosition() {
+  	var rw = Math.floor(Math.random() * window.innerWidth);
+  	var rh = Math.floor(Math.random() * window.innerHeight);
+  	return [rw, rh];
+  }
 </script>
 {%- endmacro %}

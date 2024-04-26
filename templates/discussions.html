@@ -1,21 +1,23 @@
 <html>
-<head>
-	{% import "elements/metadata.html" as metadata %}
-	{{ metadata.head(group, "Discussions") }}
-	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
+  <head>
+    {% import "elements/metadata.html" as metadata %} {{ metadata.head(group,
+    "Discussions") }}
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
 
-<header>
-	{% import "elements/navigation.html" as navigation %}
-	{{ navigation.bar() }}
-</header>
+  <header>
+    {% import "elements/navigation.html" as navigation %} {{
+    navigation.bar(account) }}
+  </header>
 
-<body>
-	{% import "elements/space.html" as space %}
-	{{ space.stars(500) }}
+  <body>
+    {% import "elements/space.html" as space %} {{ space.stars(500) }}
 
-	<h1>Discussions</h1>
-	{% import "elements/discussions.html" as discussions %}
-	{{ discussions.list(group.discussions) }}
-</body>
+    <h1>Discussions</h1>
+    {% import "elements/discussions.html" as discussions %} {{
+    discussions.list(group.discussions) }}
+  </body>
 </html>
