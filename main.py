@@ -7,7 +7,7 @@ sys.path.append(os.path.join(PROJECT_DIR, "projects.py"))
 sys.path.append(os.path.join(PROJECT_DIR, "schoology.py"))
 from config import REDIRECT_URL
 from models import Project
-from database import ProjectDatabase
+from database import database
 from schoology import group
 from flask import Flask, request, redirect, abort, render_template, session
 from cachecontrol import CacheControl
@@ -45,15 +45,16 @@ def add_project():
             return abort(401)
         name = request.form["name"].rstrip()
         description = request.form["description"].rstrip()
+        if description == "":
+            description = None
         authors = request.form["authors"]
         for author in authors:
             author = author.rstrip()
         source = request.form["source"].rstrip()
         if source == "":
             source = None
-        images = request.files.get("images")
-        group.projects.append(Project(name, description, [authors], source, images))
-        ProjectDatabase().write(group.projects)
+        project = Project(name, description, [authors], source)
+        database.add(project)
         return redirect("/projects")
     return render_template(
         "projects.html", group=group, create=True, account=session.get("name")

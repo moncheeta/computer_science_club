@@ -2,7 +2,7 @@ import os
 from datetime import datetime
 from config import DOMAIN, GROUP_ID
 from models import Group, Event, Update, Discussion, Member
-from database import ProjectDatabase
+from database import database
 from schoolopy import Schoology, Auth
 
 
@@ -68,7 +68,7 @@ class SchoologyAPI:
         events = self.events()
         updates = self.updates()
         discussions = self.discussions()
-        projects = ProjectDatabase().read()
+        projects = database.read()
         members = self.members()
         return Group(name, description, events, updates, discussions, projects, members)
 

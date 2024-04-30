@@ -1,7 +1,8 @@
 {% import "elements/authors.html" as authors %} {% macro view(project) -%}
 <h2>{{ project.name }}</h2>
+{% if project.description %}
 <p>{{ project.description }}</p>
-{% if project.source %}
+{% endif %} {% if project.source %}
 <a target="_blank" href="{{ project.source }}">Source Code</a>
 <br />
 {% endif %} {{ authors.list(project.authors) }} {% if project.images %} {% for
@@ -21,16 +22,13 @@ project in projects %}
     <input name="name" id="name" required />
     <br />
     <label for="description">Description:</label>
-    <textarea name="description" id="description" required></textarea>
+    <textarea name="description" id="description"></textarea>
     <br />
     <label for="authors">Authors:</label>
     <input name="authors" id="authors" required />
     <br />
     <label for="source">Source:</label>
     <input name="source" id="source" />
-    <br />
-    <label for="images">Images:</label>
-    <input name="images" id="images" type="file" accept="image/*" multiple />
     <br />
     <input type="submit" value="Add" />
   </form>
