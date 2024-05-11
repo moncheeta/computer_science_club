@@ -12,7 +12,7 @@ To setup the server environment, run `python -m venv .` in the root of the proje
 
 ### schoology
 
-In `config.py`, change `DOMAIN` to the URL of the Schoology instance. In addition, change `GROUP_ID` to the ID of the Schoology group. This can be found by visiting the Schoology website and by navigating to the Schoology group. The group's ID should be right after the `/group/...` subdirectory of the domain. To get a Schoolopy API key and secret, goto `schoology.(PUT DOMAIN HERE).org/api`. There, you can manage your API credentials. You will need the key and secret to run the server.
+In `config.py`, change `DOMAIN` to the URL of the Schoology instance. In addition, change `GROUP_ID` to the ID of the Schoology group. This can be found by visiting the Schoology website and by navigating to the Schoology group. The group's ID should be right after the `/group/...` subdirectory of the domain. To get a Schoolopy API key and secret, goto `schoology.example.com/api`. There, you can manage your API credentials. You will need the key and secret to run the server.
 
 ### google
 
